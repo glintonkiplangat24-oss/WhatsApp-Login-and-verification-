@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Login Demo</title><style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    min-height: 100vh;
+}
+
+.header {
+    background: #008069;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    color: #008069;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+
+.header h2 {
+    font-size: 21px;
+}
+
+.container {
+    max-width: 440px;
+    margin: 45px auto;
+    padding: 30px 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+h1 {
+    text-align: center;
+    color: #41525d;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.description {
+    text-align: center;
+    color: #667781;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #41525d;
+    font-weight: bold;
+}
+
+select, input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d1d7db;
+    border-radius: 7px;
+    font-size: 16px;
+    margin-bottom: 18px;
+    background: white;
+}
+
+button {
+    width: 100%;
+    background: #008069;
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #006b59;
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #e7f8f1;
+    color: #075e54;
+    border-radius: 8px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.notice {
+    margin-top: 25px;
+    font-size: 12px;
+    text-align: center;
+    color: #667781;
+}
+
+.footer {
+    text-align: center;
+    color: #667781;
+    font-size: 12px;
+    padding: 20px;
+}
+</style></head><body><header class="header">
+    <div class="logo">☎</div>
+    <h2>WhatsApp-style Demo</h2>
+</header><main class="container"><h1>Phone number</h1>
+
+<p class="description">
+    Enter a phone number to try this demonstration interface.
+</p>
+
+<form id="demoForm">
+
+    <label for="country">Country</label>
+
+    <select id="country">
+        <option value="+254">Kenya (+254)</option>
+        <option value="+1">Canada / USA (+1)</option>
+        <option value="+44">United Kingdom (+44)</option>
+        <option value="+61">Australia (+61)</option>
+        <option value="+255">Tanzania (+255)</option>
+        <option value="+256">Uganda (+256)</option>
+        <option value="+27">South Africa (+27)</option>
+        <option value="+91">India (+91)</option>
+    </select>
+
+    <label for="phone">Phone number</label>
+
+    <input
+        type="tel"
+        id="phone"
+        placeholder="Enter phone number"
+        required
+    >
+
+    <button type="submit">Continue</button>
+
+</form>
+
+<div class="message" id="message">
+    <h3>Demo successful!</h3>
+    <p>
+        This is an independent demonstration.
+        No WhatsApp account was accessed and no
+        verification code was requested.
+    </p>
+</div>
+
+<div class="notice">
+    Independent educational demonstration.
+    Not affiliated with WhatsApp or Meta.
+</div>
+
+</main><footer class="footer">
+    Educational demonstration page
+</footer><script>
+document.getElementById("demoForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!/^[0-9]{6,15}$/.test(phone)) {
+        alert("Please enter a valid phone number.");
+        return;
+    }
+
+    document.getElementById("message").style.display = "block";
+});
+</script></body>
+  </html>
